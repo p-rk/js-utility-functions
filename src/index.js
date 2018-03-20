@@ -6,5 +6,5 @@ export const CamelCaseString = (data) => {
 
 export const LocalCurrencyFormat = (amount, formatIn) => {
   const price = Number(amount);
-  return price.toLocaleString(`en-${formatIn}`, { maximumFractionDigits: 0, currency: 'INR'});
+  return price.toLocaleString(`${formatIn}`, { maximumFractionDigits: 0, currency: 'INR'});
 }
