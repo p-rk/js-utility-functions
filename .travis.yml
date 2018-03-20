@@ -1,0 +1,22 @@
+
+build: trust
+
+language: node_js
+
+node_js:
+  - '8'
+  - '6'
+
+sudo: required
+
+install:
+  - node
+
+cache:
+  node: true
+  directories:
+    - node_modules
+
+script:
+  - npm run build
+  - npm test
