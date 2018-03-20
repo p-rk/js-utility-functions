@@ -1,4 +1,4 @@
-# Example
+## Example
 
 ```shell
 
@@ -8,7 +8,7 @@ $ npm install js-utility-functions --save
 
 ## Availble functions
 
-# CamelCase Characters in a string
+### CamelCase Characters in a string
 
 
 ```Javascript
