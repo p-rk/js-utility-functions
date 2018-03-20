@@ -1,0 +1,43 @@
+{
+  "name": "js-utility-functions",
+  "version": "1.0.0",
+  "description": "Javascript Utility Functions",
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "watch 'npm run build' src",
+    "build": "babel src -d build",
+    "test": "jest",
+    "watch:test": "npm test -- --watch"
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p-rk/util-functions.git"
+  },
+  "keywords": [
+    "JS",
+    "utility",
+    "functions",
+    "Javascript",
+    "utility",
+    "functions",
+    "utility",
+    "functions"
+  ],
+  "author": "Rama krishna (https://github.com/p-rk/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/p-rk/util-functions/issues"
+  },
+  "homepage": "https://github.com/p-rk/util-functions#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "jest": "^22.4.2",
+    "watch": "^1.0.2"
+  }
+}
