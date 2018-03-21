@@ -1,28 +1,46 @@
 import {
   CamelCaseString,
-  LocalCurrencyFormat
+  convertStringToArray,
+  countInstanceInArray,
+  sumOfAnArray
 } from '.';
 
-test('Capitalize First Character after Space', () => (
-  expect(CamelCaseString('hello world')).toBe('Hello World')
-));
+// CamelCase String //
 
 test('Capitalize First Character after Space', () => (
   expect(CamelCaseString('hello world')).toBe('Hello World')
 ));
 
-test('Get Currency Format in INR', () => (
-  expect(LocalCurrencyFormat('100', 'en-IN')).toBe('100')
+test('Capitalize First Character after Space', () => (
+  expect(CamelCaseString('hello world')).toBe('Hello World')
 ));
 
-test('Get Currency Format in INR', () => (
-  expect(LocalCurrencyFormat('10000', 'en-IN')).toBe('10,000')
+// String to Array //
+
+test('Convert String to Array', () => (
+  expect(convertStringToArray('hello')).toEqual(['h', 'e', 'l', 'l', 'o'])
 ));
 
-test('Get Currency Format in INR', () => (
-  expect(LocalCurrencyFormat('1000000', 'en-IN')).toBe('10,00,000')
+test('Convert String to Array Removing Spaces', () => (
+  expect(convertStringToArray('hello world', true)).toEqual(['h', 'e', 'l', 'l', 'o', 'w', 'o', 'r', 'l', 'd'])
 ));
 
-test('Get Currency Format in USD', () => (
-  expect(LocalCurrencyFormat('1000000', 'en-US')).toBe('1,000,000')
+test('Convert String to Array With Spaces', () => (
+  expect(convertStringToArray('hello world', false)).toEqual(['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd'])
+));
+
+// Array Instance Count //
+
+test('Get count of repetetions in Array', () => (
+  expect(countInstanceInArray(['a', 'b', 'c', 'd', 'a', 'b', 'c', 'e'])).toEqual({a: 2, b: 2, c: 2, d: 1, e: 1})
+));
+
+// Sum up An Array //
+
+test('Sum of an Array', () => (
+  expect(sumOfAnArray([1, 2, 3, 4, 5, 6])).toEqual(21)
+));
+
+test('Sum of an Array With Initial Value 10', () => (
+  expect(sumOfAnArray([1, 2, 3, 4, 5, 6], 10)).toEqual(31)
 ));
