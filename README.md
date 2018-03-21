@@ -9,8 +9,9 @@ $ npm install js-utility-functions --save
 ## Available functions
 
  * CamelCase Characters in a string
- * Convert String to an Array [Optional Remove Spaces];
-
+ * Convert String to an Array [Optional Remove Spaces]
+ * Count Instance in an array
+ * Sum of an Array [Optional Add Initial Value]
 
 ```Javascript
 
