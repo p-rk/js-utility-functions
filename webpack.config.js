@@ -1,5 +1,5 @@
 const path = require('path');
-// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -7,7 +7,7 @@ module.exports = {
     path: path.resolve(__dirname, 'lib'),
     filename: 'index.js',
     library: 'js-utility-functions',
-    libraryTarget: 'umd'
+    libraryTarget: 'commonjs2'
   },
   module: {
     rules: [
@@ -24,5 +24,6 @@ module.exports = {
     ]
   },
   plugins: [
+    new UglifyJsPlugin()
   ]
 };
