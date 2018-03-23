@@ -1,13 +1,13 @@
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'lib'),
     filename: 'index.js',
-    libraryTarget: 'umd',
-    umdNamedDefine: true
+    library: 'js-utility-functions',
+    libraryTarget: 'umd'
   },
   module: {
     rules: [
@@ -18,14 +18,11 @@ module.exports = {
       },
       {
         test: /\.js/,
-        loader: 'eslint-loader',
-        exclude: /(node_modules|__tests__)/
+        exclude: /(node_modules|__tests__)/,
+        loader: 'eslint-loader'
       }
     ]
   },
   plugins: [
-    new UglifyJsPlugin({
-      test: /\.js($|\?)/i
-    })
   ]
 };
