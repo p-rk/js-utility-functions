@@ -1,25 +1,19 @@
-export const CamelCaseString = (data) => {
+export const camelCaseString = data => {
   const x = data.toLowerCase();
   const pp = x.split(' ');
   return pp.map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-}
+};
 
-export const convertStringToArray = (para, removeSpaces=false) => {
-  let arr = [...para];
+export const convertStringToArray = (para, removeSpaces = false) => {
+  const arr = [...para];
   return (removeSpaces) ?
-    arr.filter((item) => item !== " ") : arr;
-}
+    arr.filter(item => item !== ' ') : arr;
+};
 
-export const countInstanceInArray = (arr) => {
-  return arr.reduce((obj, item) => {
-    if(!obj[item]) obj[item]=0;
-    obj[item]++;
-    return obj;
-  }, {})
-}
+export const countInstanceInArray = arr => arr.reduce((obj, item) => {
+  if (!obj[item]) obj[item] = 0;
+  obj[item]++;
+  return obj;
+}, {});
 
-export const sumOfAnArray = (arr, initialValue=0) => {
-  return arr.reduce((a, b) => {
-    return a + b;
-  }, initialValue)
-}
+export const sumOfAnArray = (arr, initialValue = 0) => arr.reduce((a, b) => a + b, initialValue);

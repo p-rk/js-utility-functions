@@ -2,19 +2,13 @@
   "name": "js-utility-functions",
   "version": "1.2.0",
   "description": "Javascript Utility Functions",
-  "main": "build/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "dev": "watch 'npm run build' src",
-    "build": "babel src -d build",
+    "dev": "webpack --mode=development --progress --colors --watch",
+    "build": "webpack --mode=production && npm test",
     "test": "jest",
-    "watch:test": "npm test -- --watch",
     "prepublish": "npm run build",
     "release": "np"
-  },
-  "babel": {
-    "presets": [
-      "latest"
-    ]
   },
   "repository": {
     "type": "git",
@@ -37,10 +31,18 @@
   },
   "homepage": "https://github.com/p-rk/util-functions#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-latest": "^6.24.1",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^7.1.4",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
     "jest": "^22.4.2",
     "np": "^2.20.1",
-    "watch": "^1.0.2"
+    "uglifyjs-webpack-plugin": "^1.2.4",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^2.0.13"
   }
 }
