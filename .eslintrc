@@ -1,0 +1,47 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "comma-dangle": ["error", "only-multiline"],
+    "consistent-return": "off",
+    "global-require": "off",
+    "indent": ["error", 2, {"SwitchCase": 1}],
+    "max-len": ["error", 120, {"ignorePattern": "[^\\n\\r]{115,120}\\{(?:'|\") (?:'|\")\\}"}],
+    "no-alert": "off",
+    "no-confusing-arrow": "off",
+    "no-console": "off",
+    "no-param-reassign": "off",
+    "no-underscore-dangle": "off",
+    "prefer-promise-reject-errors": "warn",
+    "prefer-template": "warn",
+    "import/default": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-named-as-default": "error",
+    "import/no-unresolved": "off",
+    "no-plusplus": "off",
+    "camelcase": [2, {"properties": "always"}]
+  },
+  "plugins": [
+    "import"
+  ],
+  "settings": {
+    "import/resolve": {
+      "moduleDirectory": [
+        "node_modules",
+        "src"
+      ]
+    }
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "globals": {
+  }
+}
