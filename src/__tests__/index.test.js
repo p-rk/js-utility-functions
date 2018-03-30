@@ -1,5 +1,5 @@
 import {
-  camelCaseString,
+  titleCaseString,
   convertStringToArray,
   countInstanceInArray,
   sumOfAnArray
@@ -8,11 +8,11 @@ import {
 // CamelCase String //
 
 test('Capitalize First Character after Space', () => (
-  expect(camelCaseString('hello world')).toBe('Hello World')
+  expect(titleCaseString('hello world')).toBe('Hello World')
 ));
 
 test('Capitalize First Character after Space', () => (
-  expect(camelCaseString('hello world')).toBe('Hello World')
+  expect(titleCaseString('hello world')).toBe('Hello World')
 ));
 
 // String to Array //
