@@ -1,4 +1,4 @@
-export const camelCaseString = data => {
+export const titleCaseString = data => {
   const x = data.toLowerCase();
   const pp = x.split(' ');
   return pp.map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');

@@ -1,7 +1,7 @@
 
 # Javascript Utility functions
 
-[![Build Status](https://travis-ci.org/p-rk/util-functions.svg?branch=master)](https://travis-ci.org/p-rk/util-functions)
+[![Build Status](https://travis-ci.org/p-rk/js-utility-functions.svg?branch=master)](https://travis-ci.org/p-rk/js-utility-functions)
 
 
 ## Example
@@ -14,7 +14,7 @@ $ npm install js-utility-functions --save
 
 ## Available functions
 
- * CamelCase Characters in a string
+ * Title Case a string
  * Convert String to an Array [Optional Remove Spaces]
  * Count Instance in an array
  * Sum of an Array [Optional Add Initial Value]
@@ -22,9 +22,9 @@ $ npm install js-utility-functions --save
 ```Javascript
 
 // ES 2015
-import { CamelCaseString } from 'js-utility-functions';
+import { titleCaseString } from 'js-utility-functions';
 
-const formattedText = CamelCaseString('hello world');
+const formattedText = titleCaseString('hello world');
 
 console.log(formattedText);
 
