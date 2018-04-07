@@ -2,7 +2,14 @@ import {
   titleCaseString,
   convertStringToArray,
   countInstanceInArray,
-  sumOfAnArray
+  sumOfAnArray,
+  inArrayOfObjects,
+  validationProps,
+  isBlank,
+  validateName,
+  validateMobile,
+  validateEmail,
+  validateOption
 } from '../index';
 
 // CamelCase String //
@@ -43,4 +50,64 @@ test('Sum of an Array', () => (
 
 test('Sum of an Array With Initial Value 10', () => (
   expect(sumOfAnArray([1, 2, 3, 4, 5, 6], 10)).toEqual(31)
+));
+
+// Find and findeIndex
+
+const sampleArr = [
+  { id: 1, name: 'rama' },
+  { id: 2, name: 'krishna' },
+  { id: 3, name: 'killer' },
+  { id: 4, name: 'system' }
+]
+
+test('find in array and return obj', () => (
+  expect(inArrayOfObjects(sampleArr, 'id', 1)).toEqual({ id: 1, name: 'rama' })
+));
+
+/* Validations Test Cases */
+
+test('should return expected object', () => (
+  expect(validationProps(true, 'Please Enter Something'))
+    .toEqual({ error: true, errorMessage: 'Please Enter Something' })
+));
+
+test('should validate name and return no error object', () => (
+  expect(validateName('rama', 'Enter Valid Name')).toEqual({ error: false, errorMessage: ''})
+));
+
+test('should isBlank return true', () => (
+  expect(isBlank('')).toEqual(true)
+));
+
+test('should isBlank return true', () => (
+  expect(isBlank('hey')).toEqual(false)
+));
+
+test('should validate name and return error object', () => (
+  expect(validateName('ra', 'Enter Valid Name')).toEqual({ error: true, errorMessage: 'Enter Valid Name'})
+));
+
+test('should validate mobile number and return no error object', () => (
+  expect(validateMobile('9999999999', 'Mobile Number Valid')).toEqual({ error: false, errorMessage: ''})
+));
+
+test('should validate mobile number and return error object', () => (
+  expect(validateMobile('999999999999', 'Enter Valid Mobile Number')).toEqual({ error: true, errorMessage: 'Enter Valid Mobile Number'})
+));
+
+test('should validate email address and return no error object', () => (
+  expect(validateEmail('rama.ped@gmail.com', 'Enter Valid Email ID')).toEqual({ error: false, errorMessage: ''})
+));
+
+test('should validate email address and return error object', () => (
+  expect(validateEmail('rama.ped@gmail', 'Enter Valid Email ID')).toEqual({ error: true, errorMessage: 'Enter Valid Email ID'})
+));
+
+test('should validate option and return no error object', () => (
+  expect(validateOption('Option Selected', 'Please select an option')).toEqual({ error: false, errorMessage: ''})
+));
+
+test('should validate option and return error object', () => (
+  expect(validateOption('', 'Please select an option')).toEqual({ error: true, errorMessage: 'Please select an option'})
 ));
