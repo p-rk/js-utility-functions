@@ -19,6 +19,11 @@ $ npm install js-utility-functions --save
  * Count Instance in an array
  * Sum of an Array [Optional Add Initial Value]
 
+ * Validate Name
+ * Validate Mobile number
+ * Validate email
+ * Validate Option
+
 ```Javascript
 
 // ES 2015
@@ -96,5 +101,65 @@ let x = sumOfAnArray(data, 10);
 console.log(x);
 
 // Output : 31
+
+```
+
+- - - -
+
+```Javascript
+
+import { validateName } from 'js-utility-functions';
+
+let x = validateName("ra", "Enter Valid Name", 3);
+// First argument is value
+// Second argument is your custom error message
+// Third argument is length of the value you want to validate (optional)
+console.log(x);
+
+// Output : {error: true, errorMessage: 'Enter Valid Name'}
+
+
+import { validateMobile } from 'js-utility-functions';
+
+let x = validateMobile(9999999999, 'Enter Valid Mobile Number');
+
+//validate 10 digit mobile number
+
+console.log(x);
+
+// Output : {error: false, errorMessage: ''}
+
+
+import { validateEmail } from 'js-utility-functions';
+
+let x = validateMobile('rama.ped', 'Enter Valid Email ID');
+
+//validate 10 digit mobile number
+
+console.log(x);
+
+// Output : {error: true, errorMessage: 'Enter Valid Email ID'}
+
+
+import { validateOption } from 'js-utility-functions';
+
+let x = validateOption('option', 'Select Valid Option');
+
+//validate an option select
+
+console.log(x);
+
+// Output : {error: false, errorMessage: ''}
+
+
+For All Validation functions return following object
+
+  Error Case:
+
+  {error: true, errorMessage: 'Your custom message that is passed'}
+
+  No Error Case:
+
+  {error: false, errorMessage: ''}
 
 ```
