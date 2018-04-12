@@ -1,7 +1,9 @@
 
 # Javascript Utility functions
 
+[![npm][npm]][npm-url] 
 [![Build Status](https://travis-ci.org/p-rk/js-utility-functions.svg?branch=master)](https://travis-ci.org/p-rk/js-utility-functions)
+[![Coverage Status](https://coveralls.io/repos/github/p-rk/js-utility-functions/badge.svg?branch=master)](https://coveralls.io/github/p-rk/js-utility-functions?branch=master)
 
 
 ## Example
@@ -163,3 +165,10 @@ For All Validation functions return following object
   {error: false, errorMessage: ''}
 
 ```
+
+## License
+
+MIT
+
+[npm]: https://img.shields.io/npm/v/js-utility-functions.svg
+[npm-url]: https://www.npmjs.com/package/js-utility-functions
