@@ -4,6 +4,7 @@ import {
   countInstanceInArray,
   sumOfAnArray,
   inArrayOfObjects,
+  findArrayIndex,
   validationProps,
   isBlank,
   validateName,
@@ -63,6 +64,14 @@ const sampleArr = [
 
 test('find in array and return obj', () => (
   expect(inArrayOfObjects(sampleArr, 'id', 1)).toEqual({ id: 1, name: 'rama' })
+));
+
+test('find in array index and return index', () => (
+  expect(findArrayIndex(sampleArr, 'id', 1)).toEqual(0)
+));
+
+test('find in array index and return index 1', () => (
+  expect(findArrayIndex(sampleArr, 'id', 2)).toEqual(1)
 ));
 
 /* Validations Test Cases */
