@@ -19,10 +19,6 @@ test('Capitalize First Character after Space', () => (
   expect(titleCaseString('hello world')).toBe('Hello World')
 ));
 
-test('Capitalize First Character after Space', () => (
-  expect(titleCaseString('hello world')).toBe('Hello World')
-));
-
 // String to Array //
 
 test('Convert String to Array', () => (
