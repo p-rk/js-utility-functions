@@ -10,7 +10,8 @@ import {
   validateName,
   validateMobile,
   validateEmail,
-  validateOption
+  validateOption,
+  validatePassword
 } from '../index';
 
 
