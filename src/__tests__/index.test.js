@@ -10,7 +10,8 @@ import {
   validateName,
   validateMobile,
   validateEmail,
-  validateOption
+  validateOption,
+  getUniqueList
 } from '../index';
 
 // CamelCase String //
@@ -69,6 +70,52 @@ test('find in array index and return index', () => (
 test('find in array index and return index 1', () => (
   expect(findArrayIndex(sampleArr, 'id', 2)).toEqual(1)
 ));
+
+/* getUniqueList */
+const arr = [
+  {
+    a: 1,
+    b: 2
+  },
+  {
+    a: 2,
+    b: 1
+  },
+  {
+    a: 3,
+    b: 4
+  },
+  {
+    a: 1,
+    b: 2
+  },
+  {
+    a: 2,
+    b: 1
+  },
+  {
+    a: 2,
+    b: 1
+  }
+]
+
+test('get unique list from array of objects', () => (
+  expect(getUniqueList(arr)).toEqual([
+    {
+      a: 1,
+      b: 2
+    },
+    {
+      a: 2,
+      b: 1
+    },
+    {
+      a: 3,
+      b: 4
+    },
+  ])
+));
+
 
 /* Validations Test Cases */
 

@@ -19,3 +19,6 @@ export const sumOfAnArray = (arr, initialValue = 0) => arr.reduce((a, b) => a + 
 export const inArrayOfObjects = (arr, key, value) => arr.find(ar => ar[key] === value);
 
 export const findArrayIndex = (arr, key, value) => arr.findIndex(ar => ar[key] === value);
+
+export const getUniqueList = arr => arr.filter((ar, index, list) =>
+  list.findIndex(p => JSON.stringify(ar) === JSON.stringify(p)) === index);

@@ -4,8 +4,10 @@ import {
   countInstanceInArray,
   sumOfAnArray,
   inArrayOfObjects,
-  findArrayIndex
+  findArrayIndex,
+  getUniqueList
 } from './Arrays';
+
 import {
   validationProps,
   isBlank,
@@ -30,5 +32,6 @@ export {
   validateName,
   validateMobile,
   validateEmail,
-  validateOption
+  validateOption,
+  getUniqueList
 };
