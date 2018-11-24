@@ -39,3 +39,10 @@ export const validateOption = (value, message) => {
   }
   return validationProps(false, '');
 };
+
+export const validatePassword = (value, message, validLength = 6) => {
+  if (isBlank(value) || value.length < validLength) {
+    return validationProps(true, message);
+  }
+  return validationProps(false, '');
+};

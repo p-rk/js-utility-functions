@@ -12,6 +12,7 @@ import {
   validateName,
   validateMobile,
   validateEmail,
+  validatePassword,
   validateOption
 } from './Validations';
 
@@ -30,5 +31,7 @@ export {
   validateName,
   validateMobile,
   validateEmail,
-  validateOption
+  validatePassword,
+  validateOption,
+
 };
