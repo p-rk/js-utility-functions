@@ -14,6 +14,7 @@ import {
   validateName,
   validateMobile,
   validateEmail,
+  validatePassword,
   validateOption
 } from './Validations';
 
@@ -33,5 +34,6 @@ export {
   validateMobile,
   validateEmail,
   validateOption,
-  getUniqueList
+  getUniqueList,
+  validatePassword
 };

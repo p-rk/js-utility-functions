@@ -11,7 +11,8 @@ import {
   validateMobile,
   validateEmail,
   validateOption,
-  getUniqueList
+  getUniqueList,
+  validatePassword
 } from '../index';
 
 // CamelCase String //
@@ -162,4 +163,13 @@ test('should validate option and return no error object', () => (
 
 test('should validate option and return error object', () => (
   expect(validateOption('', 'Please select an option')).toEqual({ error: true, errorMessage: 'Please select an option'})
+));
+
+//Validate Password
+test('should validate Password and return error', () => (
+  expect(validatePassword('12345', 'Password Must be altleast 6 characters')).toEqual({ error: true, errorMessage: 'Password Must be altleast 6 characters'})
+));
+
+test('should validate Password and should not return error', () => (
+  expect(validateOption('123456', '')).toEqual({ error: false, errorMessage: ''})
 ));
