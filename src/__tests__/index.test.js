@@ -171,5 +171,5 @@ test('should validate Password and return error', () => (
 ));
 
 test('should validate Password and should not return error', () => (
-  expect(validateOption('123456', '')).toEqual({ error: false, errorMessage: ''})
+  expect(validatePassword('123456', '')).toEqual({ error: false, errorMessage: ''})
 ));
