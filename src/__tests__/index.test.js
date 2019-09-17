@@ -10,14 +10,12 @@ import {
   validateName,
   validateMobile,
   validateEmail,
-  validateOption
+  validateOption,
+  getUniqueList,
+  validatePassword
 } from '../index';
 
 // CamelCase String //
-
-test('Capitalize First Character after Space', () => (
-  expect(titleCaseString('hello world')).toBe('Hello World')
-));
 
 test('Capitalize First Character after Space', () => (
   expect(titleCaseString('hello world')).toBe('Hello World')
@@ -74,6 +72,52 @@ test('find in array index and return index 1', () => (
   expect(findArrayIndex(sampleArr, 'id', 2)).toEqual(1)
 ));
 
+/* getUniqueList */
+const arr = [
+  {
+    a: 1,
+    b: 2
+  },
+  {
+    a: 2,
+    b: 1
+  },
+  {
+    a: 3,
+    b: 4
+  },
+  {
+    a: 1,
+    b: 2
+  },
+  {
+    a: 2,
+    b: 1
+  },
+  {
+    a: 2,
+    b: 1
+  }
+]
+
+test('get unique list from array of objects', () => (
+  expect(getUniqueList(arr)).toEqual([
+    {
+      a: 1,
+      b: 2
+    },
+    {
+      a: 2,
+      b: 1
+    },
+    {
+      a: 3,
+      b: 4
+    },
+  ])
+));
+
+
 /* Validations Test Cases */
 
 test('should return expected object', () => (
@@ -119,4 +163,13 @@ test('should validate option and return no error object', () => (
 
 test('should validate option and return error object', () => (
   expect(validateOption('', 'Please select an option')).toEqual({ error: true, errorMessage: 'Please select an option'})
+));
+
+//Validate Password
+test('should validate Password and return error', () => (
+  expect(validatePassword('12345', 'Password Must be altleast 6 characters')).toEqual({ error: true, errorMessage: 'Password Must be altleast 6 characters'})
+));
+
+test('should validate Password and should not return error', () => (
+  expect(validatePassword('123456', '')).toEqual({ error: false, errorMessage: ''})
 ));

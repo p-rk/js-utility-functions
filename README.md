@@ -1,7 +1,9 @@
 
 # Javascript Utility functions
 
+[![npm][npm]][npm-url] 
 [![Build Status](https://travis-ci.org/p-rk/js-utility-functions.svg?branch=master)](https://travis-ci.org/p-rk/js-utility-functions)
+[![Coverage Status](https://coveralls.io/repos/github/p-rk/js-utility-functions/badge.svg?branch=master)](https://coveralls.io/github/p-rk/js-utility-functions?branch=master)
 
 
 ## Example
@@ -18,6 +20,11 @@ $ npm install js-utility-functions --save
  * Convert String to an Array [Optional Remove Spaces]
  * Count Instance in an array
  * Sum of an Array [Optional Add Initial Value]
+
+ * Validate Name
+ * Validate Mobile number
+ * Validate email
+ * Validate Option
 
 ```Javascript
 
@@ -98,3 +105,70 @@ console.log(x);
 // Output : 31
 
 ```
+
+- - - -
+
+```Javascript
+
+import { validateName } from 'js-utility-functions';
+
+let x = validateName("ra", "Enter Valid Name", 3);
+// First argument is value
+// Second argument is your custom error message
+// Third argument is length of the value you want to validate (optional)
+console.log(x);
+
+// Output : {error: true, errorMessage: 'Enter Valid Name'}
+
+
+import { validateMobile } from 'js-utility-functions';
+
+let x = validateMobile(9999999999, 'Enter Valid Mobile Number');
+
+//validate 10 digit mobile number
+
+console.log(x);
+
+// Output : {error: false, errorMessage: ''}
+
+
+import { validateEmail } from 'js-utility-functions';
+
+let x = validateMobile('rama.ped', 'Enter Valid Email ID');
+
+//validate 10 digit mobile number
+
+console.log(x);
+
+// Output : {error: true, errorMessage: 'Enter Valid Email ID'}
+
+
+import { validateOption } from 'js-utility-functions';
+
+let x = validateOption('option', 'Select Valid Option');
+
+//validate an option select
+
+console.log(x);
+
+// Output : {error: false, errorMessage: ''}
+
+
+For All Validation functions return following object
+
+  Error Case:
+
+  {error: true, errorMessage: 'Your custom message that is passed'}
+
+  No Error Case:
+
+  {error: false, errorMessage: ''}
+
+```
+
+## License
+
+MIT
+
+[npm]: https://img.shields.io/npm/v/js-utility-functions.svg
+[npm-url]: https://www.npmjs.com/package/js-utility-functions
